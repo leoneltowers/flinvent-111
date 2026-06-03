@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  flinvent-111:
+    image: node:22-alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flinvent-111
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - caddy
+
+networks:
+  caddy:
+    external: true

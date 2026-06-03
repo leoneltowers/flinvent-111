@@ -1,0 +1,4 @@
+111.flinvent.net {
+  reverse_proxy flinvent-111:3000
+  encode gzip
+}
