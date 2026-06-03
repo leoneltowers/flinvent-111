@@ -6,14 +6,12 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: flinvent-111
-    ports:
-      - "3000:3000"
     environment:
       - NODE_ENV=production
     restart: unless-stopped
     networks:
-      - caddy
+      - infra
 
 networks:
-  caddy:
+  infra:
     external: true
